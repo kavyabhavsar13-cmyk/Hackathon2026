@@ -1,3 +1,23 @@
 node_modules/
-.env
+dist/
+dist-ssr/
+*.local
 
+# environment variables
+.env
+.env.*.local
+
+# uploads (runtime content, not source)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# logs
+*.log
+npm-debug.log*
+
+# editor/OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
