@@ -10,6 +10,7 @@ const tripRoutes = require("./routes/tripRoutes");
 const maintenanceRoutes = require("./routes/maintenanceRoutes");
 const fuelRoutes = require("./routes/fuelRoutes");
 const expenseRoutes = require("./routes/expenseRoutes");
+const driverRoutes = require("./routes/driverRoutes");
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.use("/api/trips", tripRoutes);
 app.use("/api/maintenance", maintenanceRoutes);
 app.use("/api/fuel-logs", fuelRoutes);
 app.use("/api/expenses", expenseRoutes);
+app.use("/api/drivers", driverRoutes);
 
 app.get("/", (req, res) => {
   res.send("TransitOps API Running");
