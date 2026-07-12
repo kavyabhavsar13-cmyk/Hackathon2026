@@ -7,6 +7,7 @@ const connectDB = require("./config/db");
 
 const vehicleRoutes = require("./routes/vehicleRoutes");
 const tripRoutes = require("./routes/tripRoutes");
+const maintenanceRoutes = require("./routes/maintenanceRoutes");
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use(express.json());
 
 app.use("/api/vehicles", vehicleRoutes);
 app.use("/api/trips", tripRoutes);
+app.use("/api/maintenance", maintenanceRoutes);
 
 app.get("/", (req, res) => {
   res.send("TransitOps API Running");
