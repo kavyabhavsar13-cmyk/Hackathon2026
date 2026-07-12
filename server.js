@@ -4,6 +4,8 @@ const cors = require("cors");
 
 const connectDB = require("./config/db");
 
+const vehicleRoutes = require("./routes/vehicleRoutes");
+
 dotenv.config();
 
 connectDB();
@@ -14,12 +16,14 @@ app.use(cors());
 
 app.use(express.json());
 
+app.use("/api/vehicles", vehicleRoutes);
+
 app.get("/", (req, res) => {
-    res.send("TransitOps API Running");
+  res.send("TransitOps API Running");
 });
 
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
